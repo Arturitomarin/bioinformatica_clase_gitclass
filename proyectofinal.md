@@ -31,13 +31,17 @@ Por otro lado, para las secuencias del gen Panton-Valentine Leucocidina (PVL) se
 **Nota:** Esto se realizo separada mente por cada fasta, es decir cada carpeta a la vez. 
 2.Seguido de esto se cargó el software de iqtree por medio del comando ```module load iqtree``` y se pasó a hacer uno del código ```iqtree -s <secuanciasfastasdeinteres.fasta> -m TEST -bb 1000 -pre <nombresqconlosquequieroquesalganlosarchivos>``. Seguido de esto se descargaron los archivos y se subieron a la página de [Itol(https://itol.embl.de/) para la modificación y visualización de los árboles. 
 No obstante, se necesito una modificación la cual se realizo por medio del programa “Unipro UGENE”. En esta plataforma se cortaron, específicamente del archivo fasta del Panton-Valentine Leucocidina (PVL), unos pares de bases de 2 secuencias que eran más largas del alineamiento de todas las secuencias completas. Esto se realizó con el fin de que estos bases no generaran ruido al momento de hacer el análisis de polimorfismo por medio “de DnaSP”.  Aunque su árbol se volvió a realizar por medio de IQtree en la terminal. Al tener los fastas cargados en UGENE se pasó a la creación de un árbol de máxima verosimilitud para el gen Panton Valentine Leucocidina, esto por medio de la herramienta “Build Phylogenetic Tree”. Después se enraizaron y se modificaron para que su aspecto fuera óptimo para la visualización en conjunto de sus análisis. Lo cual se visualiza asi: 
+
 ![WhatsApp Image 2023-05-29 at 01 32 43](https://github.com/Arturitomarin/bioinformatica_clase_gitclass/assets/130739862/6f256883-f751-443c-8bd5-7b2201a62a37)
 ## Análisis de diversidad genética  
 El último paso fue realizar el análisis de polimorfismo en cada uno de los genes, lo cual se realizó por medio de la aplicación DnaSP. 
 1.Se descargaron nuevamente los fastas ya alineados si se abrieron cada uno por separado en la aplicación. 
 2.Se utilizó la herramienta “Overview: Polymorphism data”. Lo cual se ve así: 
+
 ![WhatsApp Image 2023-05-29 at 01 37 54](https://github.com/Arturitomarin/bioinformatica_clase_gitclass/assets/130739862/88a1b065-d4fd-45b6-9334-a29761ea79e7)
 
 3.Se extrajeron los valores de los parámetros: Number of variable sites, S, Total number of mutations. Eta, Nucleotide diversity (per site). Pi,  Number of Haplotypes. h:, Haplotype (gene) diversity. Hd: & Tajma's D. Los cuales se presentan de esta forma: 
 ![WhatsApp Image 2023-05-29 at 01 38 32](https://github.com/Arturitomarin/bioinformatica_clase_gitclass/assets/130739862/26385312-042e-4537-a659-6e1b70ce73bd)
+
+### Ya con todo esto se pasó a realizar el análisis de los resultados.
 
