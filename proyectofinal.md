@@ -6,20 +6,25 @@ En el siguiente texto se hará un explicación más detallada del procedimiento 
 ## Descarga de secuencias edición de nombres de secuencias
 
 1. Inicialmente se ingresó a la página de [NCBI](https://www.ncbi.nlm.nih.gov/)  y se pasó a buscar los genes de interés en la barra de búsqueda, agregando el filtro de búsqueda de “Nucleotide”. Este sirve para buscar las secuencias en una de las bases de datos del propio NCBI dejando solo la información y el tipo de información (RNA, Genoma completo, ADN, textos,  etc)  en este caso nucleótidos. 
+
 ![WhatsApp Image 2023-05-29 at 00 44 37](https://github.com/Arturitomarin/bioinformatica_clase_gitclass/assets/130739862/87311b4b-524b-4da1-9fd7-d5b8e7949423)
 
 2. Seguido de esto y debido a que se encontraron secuencias mayores a 2,761,442 pb se limitó este largo de pares de bases utilizando el comando el filtro “Sequence length: Custom range”. Este se establece de 0 pb hasta 600 pb.  
+
 ![WhatsApp Image 2023-05-29 at 00 53 24](https://github.com/Arturitomarin/bioinformatica_clase_gitclass/assets/130739862/6c89ab73-85a1-4683-90a3-d8542416f386)
 
-3. Debido a la limitada existencia de secuencias con respecto al gen de Panton-Valentine Leucocidina se escogieron 17 secuencias para cada uno de los genes, con el fin de que esta variable de cantidad  fuera controlada.  Después de la selección de las secuencias, estas fueron descargadas utilizando el comando “send to” en un mismo formato Fasta. 
+3. Debido a la limitada existencia de secuencias con respecto al gen de Panton-Valentine Leucocidina se escogieron 17 secuencias para cada uno de los genes, con el fin de que esta variable de cantidad  fuera controlada.  Después de la selección de las secuencias, estas fueron descargadas utilizando el comando “send to” en un mismo formato Fasta.
+
 ![WhatsApp Image 2023-05-29 at 00 57 54](https://github.com/Arturitomarin/bioinformatica_clase_gitclass/assets/130739862/1ad7d6a7-aef6-45ee-b8f1-59f43ccea9fe)
 
 ## Edición de nombres de secuencias
 
 Debido a que las secuencias descargadas se encontraban con el nombre otorgado por aquellos que las suministraron a la plataforma de NCBI fue necesario el cambiar aquellas etiquetas con el fin de facilitar el análisis de estos, lo cual se realizo por medio de Atom. Se ejecuto Atom con el fin de hacer uso de las expresiones regulares para cambiar los nombres de las secuencias, específicamente para que quedaran de la siguiente manera “Especie de la que proviene, identificador de secuencia y nombre del gen”. Primero se realizo el comando crt+f y se activo el use regex del case sentitive. En el caso de las secuencias gen Alfa Hemolisina se utilizó la expresión: “  >[A-Z0-9.]+\s(.+?)\s\(hla\)  ”  y se utilizó el comando de reemplazo: “ >$1 ”. Lo cual se visualiza de la siguiente manera 
+
 ![WhatsApp Image 2023-05-29 at 01 04 59](https://github.com/Arturitomarin/bioinformatica_clase_gitclass/assets/130739862/2c520617-6513-43f4-8bb6-d1e23c92f36e)
 
 Por otro lado, para las secuencias del gen Panton-Valentine Leucocidina (PVL) se utilizó la expresión regular: “ >[A-Z0-9.]+\  ” y el comando reemplazar “ > ”. Lo cual se visualizó de la siguiente forma: 
+
 ![WhatsApp Image 2023-05-29 at 01 06 49](https://github.com/Arturitomarin/bioinformatica_clase_gitclass/assets/130739862/4206013f-0382-4946-8636-b2c1c523493d)
 
 **Nota:** se deberían visualizar resultados encontrados en la barra, pero la foto se tomó para demostrar, no en el momento de la realización del proyecto. 
@@ -33,6 +38,7 @@ Por otro lado, para las secuencias del gen Panton-Valentine Leucocidina (PVL) se
 No obstante, se necesito una modificación la cual se realizo por medio del programa “Unipro UGENE”. En esta plataforma se cortaron, específicamente del archivo fasta del Panton-Valentine Leucocidina (PVL), unos pares de bases de 2 secuencias que eran más largas del alineamiento de todas las secuencias completas. Esto se realizó con el fin de que estos bases no generaran ruido al momento de hacer el análisis de polimorfismo por medio “de DnaSP”.  Aunque su árbol se volvió a realizar por medio de IQtree en la terminal. Al tener los fastas cargados en UGENE se pasó a la creación de un árbol de máxima verosimilitud para el gen Panton Valentine Leucocidina, esto por medio de la herramienta “Build Phylogenetic Tree”. Después se enraizaron y se modificaron para que su aspecto fuera óptimo para la visualización en conjunto de sus análisis. Lo cual se visualiza asi: 
 
 ![WhatsApp Image 2023-05-29 at 01 32 43](https://github.com/Arturitomarin/bioinformatica_clase_gitclass/assets/130739862/6f256883-f751-443c-8bd5-7b2201a62a37)
+
 ## Análisis de diversidad genética  
 El último paso fue realizar el análisis de polimorfismo en cada uno de los genes, lo cual se realizó por medio de la aplicación DnaSP. 
 1.Se descargaron nuevamente los fastas ya alineados si se abrieron cada uno por separado en la aplicación. 
